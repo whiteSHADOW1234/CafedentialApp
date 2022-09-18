@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "72489251126",
+    "project_id": "cafedential",
+    "storage_bucket": "cafedential.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:72489251126:android:bb48bca1b29a2aa770c397",
+        "android_client_info": {
+          "package_name": "com.example.cafedential"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "72489251126-qlvulu182pib54t5qbp7d8r1idmib2st.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAqX0Q-9RLkcgTq47qvaqU1WKI4tbzrh2I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "72489251126-qlvulu182pib54t5qbp7d8r1idmib2st.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "72489251126-qghh480c85svn08tu3vhrb600rcklmhh.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.cafedential"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
