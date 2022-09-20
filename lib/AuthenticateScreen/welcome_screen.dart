@@ -1,3 +1,5 @@
+// ignore_for_file: library_private_types_in_public_api
+
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 import 'login_screen.dart';
@@ -5,6 +7,8 @@ import 'register_screen.dart';
 
 class Welcome extends StatefulWidget {
   static const String id = 'welcome';
+
+  const Welcome({Key? key}) : super(key: key);
   @override
   _WelcomeState createState() => _WelcomeState();
 }
@@ -21,7 +25,7 @@ class _WelcomeState extends State<Welcome> {
             const SizedBox(height: 30,),
             const Center(
               child: Text(
-                'Coffee Manager',
+                'Cafedential',
                 style: TextStyle(
                   fontFamily: 'Billabong',
                   color: Colors.black,

@@ -1,9 +1,11 @@
-import 'package:cafedential/MainPageScreen/add_coffee_page.dart';
+// import 'package:cafedential/MainPageScreen/add_coffee_page.dart';
+// ignore_for_file: library_private_types_in_public_api
+
 import 'package:cafedential/MainPageScreen/home_page.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:flutter_snake_navigationbar/flutter_snake_navigationbar.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+// import 'package:flutter_snake_navigationbar/flutter_snake_navigationbar.dart';
+// import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 final _auth = FirebaseAuth.instance;
 User? loggedInUser = _auth.currentUser;
@@ -22,12 +24,12 @@ class _NavState extends State<Nav> {
     super.initState();
   }
 
-  int _selectedIndex = 0;
-  void _onItemTap(int index) {
-    setState(() {
-      _selectedIndex = index;
-    });
-  }
+  final int _selectedIndex = 0;
+  // void _onItemTap(int index) {
+  //   setState(() {
+  //     _selectedIndex = index;
+  //   });
+  // }
 
   final List<Widget> _widgetOptions = [
     const HomePage(),
@@ -50,7 +52,7 @@ class _NavState extends State<Nav> {
         appBar: AppBar(
           automaticallyImplyLeading: false,
           elevation: 0.0,
-          backgroundColor: Color.fromARGB(255, 127, 90, 82),
+          backgroundColor: const Color.fromARGB(255, 127, 90, 82),
           title: const Center(
             child: Text(
               'Coffee Notes',

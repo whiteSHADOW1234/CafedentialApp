@@ -1,7 +1,10 @@
+// ignore_for_file: non_constant_identifier_names, use_build_context_synchronously
+
 import 'package:cafedential/MainPageScreen/main_methods/cloud_coffee_data.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:modal_progress_hud/modal_progress_hud.dart';
+import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
+// import 'package:modal_progress_hud/modal_progress_hud.dart';
 
 class AddCoffeeData extends StatefulWidget {
   final Function() notifyParent;
@@ -50,7 +53,7 @@ class _AddCoffeeDataState extends State<AddCoffeeData> {
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
-          backgroundColor: Color.fromARGB(255, 157, 96, 74),
+          backgroundColor: const Color.fromARGB(255, 157, 96, 74),
           title: const Text('Add Coffee Data'),
         ),
         body: ModalProgressHUD(
@@ -366,11 +369,12 @@ class _AddCoffeeDataState extends State<AddCoffeeData> {
                       child: TextButton(
                         onPressed: () async {
                           if(_addDataKey.currentState!.validate()) {
-                            print('Validated');
+                            // print('Validated');
                             SystemChannels.textInput.invokeMethod('TextInput.hide');
                             setState(() {
                               showSpinner = true;
                             });
+                            // ignore: no_leading_underscores_for_local_identifiers
                             final AddCoffeeDataResult _addCoffeeDataResult = await _addCoffeeInfo.addCoffeeInformation(
                               coffeeName: _nameController.text, 
                               coffeeRoast: _roastController.text, 
@@ -415,7 +419,7 @@ class _AddCoffeeDataState extends State<AddCoffeeData> {
                             });
                             Navigator.pop(context);
                           } else {
-                            print('Not Validated');
+                            // print('Not Validated');
                           }
                         },
                         child: const Text(

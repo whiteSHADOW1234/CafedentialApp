@@ -1,15 +1,20 @@
+// ignore_for_file: library_private_types_in_public_api, use_build_context_synchronously
+
 import 'package:cafedential/AuthenticateScreen/auth_methods/auth_enum.dart';
 import 'package:cafedential/AuthenticateScreen/auth_methods/auth_methods.dart';
 import 'package:cafedential/AuthenticateScreen/auth_methods/email_and_password_auth.dart';
-import 'package:firebase_auth/firebase_auth.dart';
+// import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:lottie/lottie.dart';
-import 'package:modal_progress_hud/modal_progress_hud.dart';
+// import 'package:modal_progress_hud/modal_progress_hud.dart';
+import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 import '../../nav.dart';
 
 class LoginScreen extends StatefulWidget {
   static const String id = 'login';
+
+  const LoginScreen({Key? key}) : super(key: key);
 
   @override
   _LoginScreenState createState() => _LoginScreenState();
@@ -20,7 +25,7 @@ class _LoginScreenState extends State<LoginScreen> {
   final GlobalKey<FormState> _loginKey = GlobalKey<FormState>();
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
-  final _auth = FirebaseAuth.instance;
+  // final _auth = FirebaseAuth.instance;
   bool showSpinner = false;
   // late String email;
   // late String password;
@@ -112,7 +117,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         child: TextButton(
                             onPressed: () async {
                               if(_loginKey.currentState!.validate()) {
-                                print('Validated');
+                                // print('Validated');
                                 SystemChannels.textInput.invokeMethod('TextInput.hide');
                                 setState(() {
                                   showSpinner = true;
@@ -120,7 +125,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                 final EmailSignInResults emailSignInResults = await _emailAndPasswordAuth.signInWithEmailAndPassword( email: _emailController.text, password: _passwordController.text);
                                 String msg = "";
                                 if(emailSignInResults == EmailSignInResults.SignInComplete) {
-                                  Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (context) => Nav()), (route) => false);
+                                  Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (context) => const Nav()), (route) => false);
                                 } else if (emailSignInResults == EmailSignInResults.EmailNotVerified){
                                   msg = "Email not verified.\nPlease verify your email";
                                 } else if (emailSignInResults == EmailSignInResults.EmailOrPasswordInvalid){

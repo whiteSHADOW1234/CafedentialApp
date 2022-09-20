@@ -3,7 +3,9 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 enum AddCoffeeDataResult {
+  // ignore: constant_identifier_names
   Success,
+  // ignore: constant_identifier_names
   Failure,
 }
 
@@ -36,7 +38,7 @@ class AddCoffeeInfo {
     String? finalScore,
   }) async {
     try{
-      final User userCredential = await FirebaseAuth.instance.currentUser!;
+      final User userCredential = FirebaseAuth.instance.currentUser!;
       FirebaseFirestore.instance.collection('users').doc(userCredential.uid).collection('coffee_notes').add({
         'coffee_name': coffeeName,
         'coffee_roast': coffeeRoast,
@@ -66,7 +68,7 @@ class AddCoffeeInfo {
       });
       return AddCoffeeDataResult.Success;
     } catch (e) {
-      print(e.toString());
+      // print(e.toString());
       return AddCoffeeDataResult.Failure;
     }
   }
@@ -100,7 +102,7 @@ class AddCoffeeInfo {
     required String docId,
     }) async {
       try {
-        final User userCredential = await FirebaseAuth.instance.currentUser!;
+        final User userCredential = FirebaseAuth.instance.currentUser!;
         FirebaseFirestore.instance.collection('users').doc(userCredential.uid).collection('coffee_notes').doc(docId).update({
           'coffee_name': coffeeName,
           'coffee_roast': coffeeRoast,
@@ -130,7 +132,7 @@ class AddCoffeeInfo {
         });
         return AddCoffeeDataResult.Success;
       } catch (e) {
-        print(e.toString());
+        // print(e.toString());
         return AddCoffeeDataResult.Failure;
       }
     }

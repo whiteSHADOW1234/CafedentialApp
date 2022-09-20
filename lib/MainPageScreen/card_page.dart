@@ -1,3 +1,4 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:cafedential/MainPageScreen/edit_coffee_info_page.dart';
 import 'package:cafedential/MainPageScreen/main_methods/cloud_coffee_data.dart';
@@ -6,9 +7,11 @@ import 'package:flutter/material.dart';
 
 class CardPage extends StatefulWidget {
   final Function() notifyParent;
+  // ignore: non_constant_identifier_names
   final String doc_id;
   final CoffeeList coffeeList;
-  CardPage({Key? key, required this.coffeeList, required this.doc_id, required this.notifyParent}) : super(key: key);
+  // ignore: non_constant_identifier_names
+  const CardPage({Key? key, required this.coffeeList, required this.doc_id, required this.notifyParent}) : super(key: key);
 
   @override
   State<CardPage> createState() => _CardPageState();
@@ -66,7 +69,7 @@ class _CardPageState extends State<CardPage> {
         ),
         body: SingleChildScrollView(
           child: Container(
-            color: Color.fromARGB(255, 242, 244, 228),
+            color: const Color.fromARGB(255, 242, 244, 228),
             child: coffeeInfo()
           ),
         ),
@@ -78,60 +81,77 @@ class _CardPageState extends State<CardPage> {
     return Column(
       children: [
         // Text('index: ${widget.coffeeList.indexID}'),
-        twoTextStyles('Roast','${widget.coffeeList.coffeeRoast}','Date','${widget.coffeeList.date}'),
-        twoTextStyles('Temperature','${widget.coffeeList.temperature}', 'Grind Size','${widget.coffeeList.grindSize}'),
-        twoTextStyles('Brew\nRatio','${widget.coffeeList.brewRatio}','Brew\nTime','${widget.coffeeList.brewTime} min'),
-        twoTextStyles('Aroma\n Score','${widget.coffeeList.aromaScore}','Flavor\n Score','${widget.coffeeList.flavorScore}'),
-        twoTextStyles('Acidity\n Score','${widget.coffeeList.acidityScore}',' Body\nScore','${widget.coffeeList.bodyScore}'),
-        twoTextStyles('Balance\n  Score','${widget.coffeeList.balanceScore}','Aftertaste\n   Score','${widget.coffeeList.aftertasteScore}'),
-        twoTextStyles('Uniformity\n    Score','${widget.coffeeList.uniformityScore}', 'Sweetness\n    Score','${widget.coffeeList.sweetnessScore}'),
-        twoTextStyles('Clean Cup\n    Score','${widget.coffeeList.cleanCupScore}','Overall\n  Score','${widget.coffeeList.overallScore}'),
-        twoTextStyles('Defect\n Score','${widget.coffeeList.defectScore}', 'Total (Final)\n     Score','${widget.coffeeList.totalScore} (${widget.coffeeList.finalScore?.substring(0, 4)})'),
-        longTextStyle('Aroma Dry','${widget.coffeeList.aromaDry}'),
-        longTextStyle('Aroma Break','${widget.coffeeList.aromaBreak}'),
-        longTextStyle('Aroma Intensity','${widget.coffeeList.acidityIntensity}'),
-        longTextStyle('Brew Method','${widget.coffeeList.brewMethod}'),
-        longTextStyle('Notes','${widget.coffeeList.notes}'),
-        SizedBox(height: 20,),
+        twoTextStyles(' Roast ','${widget.coffeeList.coffeeRoast}',' Date ','${widget.coffeeList.date}'),
+        twoTextStyles(' Temperature ','${widget.coffeeList.temperature}', ' Grind Size ','${widget.coffeeList.grindSize}'),
+        twoTextStyles(' Brew Ratio ','${widget.coffeeList.brewRatio}',' Brew Time ','${widget.coffeeList.brewTime} min'),
+        twoTextStyles(' Aroma Score ','${widget.coffeeList.aromaScore}',' Flavor Score ','${widget.coffeeList.flavorScore}'),
+        twoTextStyles(' Acidity Score ','${widget.coffeeList.acidityScore}',' Body Score ','${widget.coffeeList.bodyScore}'),
+        twoTextStyles(' Balance Score ','${widget.coffeeList.balanceScore}',' Aftertaste Score ','${widget.coffeeList.aftertasteScore}'),
+        twoTextStyles(' Uniformity Score ','${widget.coffeeList.uniformityScore}', ' Sweetness Score ','${widget.coffeeList.sweetnessScore}'),
+        twoTextStyles(' Clean Cup Score ','${widget.coffeeList.cleanCupScore}',' Overall Score ','${widget.coffeeList.overallScore}'),
+        twoTextStyles(' Defect Score ','${widget.coffeeList.defectScore}', ' Total (Final) Score ','${widget.coffeeList.totalScore} (${widget.coffeeList.finalScore?.substring(0, 4)})'),
+        longTextStyle(' Aroma Dry ','${widget.coffeeList.aromaDry}'),
+        longTextStyle(' Aroma Break ','${widget.coffeeList.aromaBreak}'),
+        longTextStyle(' Aroma Intensity ','${widget.coffeeList.acidityIntensity}'),
+        longTextStyle(' Brew Method ','${widget.coffeeList.brewMethod}'),
+        longTextStyle(' Notes ','${widget.coffeeList.notes}'),
+        const SizedBox(height: 20,),
       ],
     );
   }
 
   Widget textStyle(String title,String content) {
-    return Padding(
-      padding: const EdgeInsets.all(10.0),
-      child: Align(
-        alignment: Alignment.centerLeft,
-        child: Card(
-          color: Color.fromARGB(157, 228, 170, 149),
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(15.0),
-          ),
-          child: SizedBox(
-            height:150,
-            width: 175,
-            child: Column(
-              children: [
-                const SizedBox(
-                  height: 20,
+    return Align(
+      alignment: Alignment.centerLeft,
+      child: Card(
+        color: const Color.fromARGB(157, 228, 170, 149),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(15.0),
+        ),
+        child: SizedBox(
+          height:150,
+          width: 175,
+          child: Column(
+            children: [
+              const SizedBox(
+                height: 20,
+              ),
+              AutoSizeText(
+                title,
+                style: const TextStyle(
+                  fontSize: 22,
+                  fontFamily: 'ArefRuqaalnk',
+                  // fontWeight: FontWeight.bold,
                 ),
-                Text(
-                  title,
-                  style: const TextStyle(
-                    fontSize: 25,
-                    // fontWeight: FontWeight.bold,
-                    fontFamily: 'ArefRuqaalnk',
-                  ),
-                ),
-                const SizedBox(height: 10,),
-                Text(
+                maxLines: 1,
+              ),
+              // Text(
+              //   title,
+              //   style: const TextStyle(
+              //     fontSize: 22,
+              //     // fontWeight: FontWeight.bold,
+              //     fontFamily: 'ArefRuqaalnk',
+              //   ),
+              // ),
+              const SizedBox(height: 10,),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: AutoSizeText(
                   content,
                   style: const TextStyle(
                     fontSize: 20,
+                    // fontWeight: FontWeight.bold,
                   ),
+                  maxLines: 2,
                 ),
-              ],
-            ),
+              ),
+              // Text(
+              //   content,
+              //   style: const TextStyle(
+              //     fontSize: 20,
+              //   ),
+              // ),
+            ],
           ),
         ),
       ),
@@ -139,11 +159,19 @@ class _CardPageState extends State<CardPage> {
   }
 
   Widget twoTextStyles(String title1,String content1, String title2, String content2){
-    return Row(
-      children: [
-        textStyle(title1,content1),
-        textStyle(title2,content2),
-      ],
+    return Padding(
+      padding: const EdgeInsets.all(10.0),
+      child: SizedBox(
+        height: 150,
+        width: MediaQuery.of(context).size.width,
+        child: Row(
+          children: [
+            textStyle(title1,content1),// 10 + 175 = 185
+            SizedBox(width: (MediaQuery.of(context).size.width - 400 <0) ? 0 : MediaQuery.of(context).size.width - 400,),//185*2 = 370
+            textStyle(title2,content2),// 10 + 175 = 185
+          ],
+        ),
+      ),
     );
   }
 
@@ -173,12 +201,22 @@ class _CardPageState extends State<CardPage> {
                   ),
                 ),
                 const SizedBox(height: 10,),
-                Text(
-                  content,
-                  style: const TextStyle(
-                    fontSize: 20,
+                Padding(
+                  padding: const EdgeInsets.only(left: 10, right: 10),
+                  child: AutoSizeText(
+                    content,
+                    style: const TextStyle(
+                      fontSize: 20,
+                    ),
+                    maxLines: 5,
                   ),
                 ),
+                // Text(
+                //   content,
+                //   style: const TextStyle(
+                //     fontSize: 20,
+                //   ),
+                // ),
               ],
             ),
           ),

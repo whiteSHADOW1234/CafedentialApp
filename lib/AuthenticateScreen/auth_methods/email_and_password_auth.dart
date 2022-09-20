@@ -23,7 +23,7 @@ class EmailandPasswordAuth {
         return EmailSignUpResults.SignUpFailed;
       }
     } catch (e) {
-      print(e.toString());
+      // print(e.toString());
       return EmailSignUpResults.Error;
     }
   }
@@ -44,7 +44,7 @@ class EmailandPasswordAuth {
       //   }
       // }
     } catch (e) {
-      print(e.toString());
+      // print(e.toString());
       return EmailSignInResults.EmailOrPasswordInvalid;
     }
   }
@@ -53,7 +53,7 @@ class EmailandPasswordAuth {
       await FirebaseAuth.instance.signOut();
       return true;
     } catch (e) {
-      print(e.toString());
+      // print(e.toString());
       return false;
     }
   }
