@@ -1,6 +1,6 @@
 # Cafedential
 - This is an flutter app which could calculate the score of a cup of coffee and store it with some notes in firebase
-
+[Here's the apk link](https://github.com/whiteSHADOW1234/CafedentialApp/blob/main/app-release.apk)
 
 ### Authentication Screens
 
