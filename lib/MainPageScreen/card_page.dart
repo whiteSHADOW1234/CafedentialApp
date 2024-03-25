@@ -31,40 +31,7 @@ class _CardPageState extends State<CardPage> {
               onPressed: () {
                 Navigator.push(context, MaterialPageRoute(builder: (context) => EditCoffeeData(coffeeList: widget.coffeeList, doc_id: widget.doc_id, notifyParent: widget.notifyParent)));
               },
-            ),
-
-            // IconButton(
-            //   icon: const Icon(Icons.delete),
-            //   onPressed: () async {
-            //     showDialog(
-            //       context: context,
-            //       builder: (context) {
-            //         return AlertDialog(
-            //           title: const Text('Delete this note?'),
-            //           actions: [
-            //             TextButton(
-            //               onPressed: () {
-            //                 Navigator.pop(context);
-            //               },
-            //               child: const Text('Cancel'),
-            //             ),
-            //             TextButton(
-            //               onPressed: () async {
-            //                 final User userCredential = FirebaseAuth.instance.currentUser!;
-            //                 await FirebaseFirestore.instance.collection('users').doc(userCredential.uid).collection('coffee_notes').doc(widget.doc_id).delete().whenComplete((){
-            //                   widget.notifyParent();
-            //                   Navigator.pop(context);
-            //                 });
-            //               },
-            //               child: const Text('Delete'),
-            //             ),
-            //           ],
-            //         );
-            //       },
-            //     );
-            //   },
-            // ),
-          
+            ),          
           ],
         ),
         body: SingleChildScrollView(
@@ -81,7 +48,6 @@ class _CardPageState extends State<CardPage> {
     return Column(
       key: const Key('coffee_info_column'),
       children: [
-        // Text('index: ${widget.coffeeList.indexID}'),
         twoTextStyles(' Roast ','${widget.coffeeList.coffeeRoast}',' Date ','${widget.coffeeList.date}'),
         twoTextStyles(' Temperature ','${widget.coffeeList.temperature}', ' Grind Size ','${widget.coffeeList.grindSize}'),
         twoTextStyles(' Brew Ratio ','${widget.coffeeList.brewRatio}',' Brew Time ','${widget.coffeeList.brewTime} min'),
@@ -122,18 +88,9 @@ class _CardPageState extends State<CardPage> {
                 style: const TextStyle(
                   fontSize: 22,
                   fontFamily: 'ArefRuqaalnk',
-                  // fontWeight: FontWeight.bold,
                 ),
                 maxLines: 1,
               ),
-              // Text(
-              //   title,
-              //   style: const TextStyle(
-              //     fontSize: 22,
-              //     // fontWeight: FontWeight.bold,
-              //     fontFamily: 'ArefRuqaalnk',
-              //   ),
-              // ),
               const SizedBox(height: 10,),
               Padding(
                 padding: const EdgeInsets.all(8.0),
@@ -141,17 +98,10 @@ class _CardPageState extends State<CardPage> {
                   content,
                   style: const TextStyle(
                     fontSize: 20,
-                    // fontWeight: FontWeight.bold,
                   ),
                   maxLines: 2,
                 ),
               ),
-              // Text(
-              //   content,
-              //   style: const TextStyle(
-              //     fontSize: 20,
-              //   ),
-              // ),
             ],
           ),
         ),
@@ -212,12 +162,6 @@ class _CardPageState extends State<CardPage> {
                     maxLines: 5,
                   ),
                 ),
-                // Text(
-                //   content,
-                //   style: const TextStyle(
-                //     fontSize: 20,
-                //   ),
-                // ),
               ],
             ),
           ),

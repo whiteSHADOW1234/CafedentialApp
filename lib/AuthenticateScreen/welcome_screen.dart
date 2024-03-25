@@ -38,7 +38,6 @@ class _WelcomeState extends State<Welcome> {
               height: 300,
               width: 300,
               child: Lottie.asset('assets/welcome-coffee.json'),
-              // child: Lottie.network('https://assets8.lottiefiles.com/private_files/lf30_kjpkr2oh.json'),
             ),
             Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,

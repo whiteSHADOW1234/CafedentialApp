@@ -5,11 +5,9 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:cafedential/MainPageScreen/add_coffee_page.dart';
 import 'package:cafedential/MainPageScreen/card_page.dart';
 import 'package:cafedential/MainPageScreen/main_methods/cloud_coffee_data.dart';
-// import 'package:cafedential/nav.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
-// import 'package:modal_progress_hud/modal_progress_hud.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -28,7 +26,6 @@ class _HomePageState extends State<HomePage> {
   refresh() {
     setState(() {
       didChangeDependencies();
-      // getUserCoffeeNoteList();
     });
   }
 
@@ -57,7 +54,6 @@ class _HomePageState extends State<HomePage> {
                     SizedBox(
                         height: 250.0,
                         child: Lottie.asset('assets/no-data-coffee-time.json'),
-                        // child: Lottie.network('https://assets6.lottiefiles.com/packages/lf20_UTYENB.json'),
                       ),
                     const Text('No Data ...', style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold)),
                     const Text('Press the plus button to create your coffee data', style: TextStyle(fontSize: 15,)),
@@ -92,11 +88,7 @@ class _HomePageState extends State<HomePage> {
           have_data = false;
         });
       }
-      // setState(() {
-      //   have_data = false;
-      // });
     }
-    // print('doc_id: $doc_id');
   }
 }
 
@@ -139,10 +131,6 @@ class _HomeCardState extends State<HomeCard> {
                   style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                   maxLines: 2,
                 ),
-                // Text(
-                //   "${widget.coffeeList.coffeeName}",
-                //   style: const TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
-                // ),
                 subtitle: Text(
                   '\n${widget.coffeeList.date}',
                   style: const TextStyle(fontSize: 15, color: Color.fromARGB(255, 138, 138, 138)),
@@ -150,7 +138,7 @@ class _HomeCardState extends State<HomeCard> {
                 trailing: Text(
                       'Total Score: ${widget.coffeeList.totalScore}\nFinal Score: ${widget.coffeeList.finalScore?.substring(0, 4)}',
                       style: const TextStyle(fontSize: 20, color: Color.fromARGB(255, 75, 75, 75)),
-                    ),//Text('${coffeeList.totalScore}  (${coffeeList.finalScore})'),
+                    ),
               ),
               onTap: () {
                 Navigator.push(
@@ -183,7 +171,6 @@ class _HomeCardState extends State<HomeCard> {
                               // print('Delete Success');
                               widget.notifyParent();
                             });
-                            // .catchError((error) => print('Failed to delete the note: $error'));
                             setState(() {
                               showSpinner = false;
                             });
@@ -191,8 +178,6 @@ class _HomeCardState extends State<HomeCard> {
                             widget.notifyParent();
                             // ignore: use_build_context_synchronously
                             Navigator.pop(context);
-                            // Navigator.pop(context);
-                            // Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => Nav()));
                           },
                           child: const Text('Delete'),
                         ),

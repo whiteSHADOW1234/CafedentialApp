@@ -3,11 +3,9 @@
 import 'package:cafedential/AuthenticateScreen/auth_methods/auth_enum.dart';
 import 'package:cafedential/AuthenticateScreen/auth_methods/auth_methods.dart';
 import 'package:cafedential/AuthenticateScreen/auth_methods/email_and_password_auth.dart';
-// import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:lottie/lottie.dart';
-// import 'package:modal_progress_hud/modal_progress_hud.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 import '../../nav.dart';
 
@@ -25,15 +23,13 @@ class _LoginScreenState extends State<LoginScreen> {
   final GlobalKey<FormState> _loginKey = GlobalKey<FormState>();
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
-  // final _auth = FirebaseAuth.instance;
+
   bool showSpinner = false;
-  // late String email;
-  // late String password;
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        // backgroundColor: Colors.white,
         body: ModalProgressHUD(
           inAsyncCall: showSpinner,
           child: Padding(
@@ -62,7 +58,6 @@ class _LoginScreenState extends State<LoginScreen> {
                     SizedBox(
                       height: 230.0,
                       child: Lottie.asset('assets/login-coffee.json'),
-                      // child: Lottie.network('https://assets8.lottiefiles.com/packages/lf20_nik29bnh.json'),
                     ),
                     const SizedBox(
                       height: 20.0,
@@ -101,7 +96,6 @@ class _LoginScreenState extends State<LoginScreen> {
                     Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
                       child: Container(
-                        // padding: EdgeInsets.fromLTRB(20.0, 20.0, 50.0, 10.0),
                         decoration: BoxDecoration(
                             gradient: const LinearGradient(
                               colors: [

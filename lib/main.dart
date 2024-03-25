@@ -32,9 +32,7 @@ class MyApp extends StatelessWidget {
       ],
       child: MaterialApp(
         theme: ThemeData(
-          // scaffoldBackgroundColor: Colors.brown[900],
           scaffoldBackgroundColor: const Color.fromARGB(255, 241, 255, 232)
-          // scaffoldBackgroundColor: const Color.fromARGB(255, 236, 243, 178),
         ),
         debugShowCheckedModeBanner: false,
         initialRoute: Authenticate.id,

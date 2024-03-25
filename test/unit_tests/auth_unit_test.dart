@@ -56,7 +56,6 @@ void main() {
 
 
     test('signInWithEmailAndPassword - EmailOrPasswordInvalid', () async {
-      // Perform sign-in
       final result = await emailandPasswordAuth.signInWithEmailAndPassword(
         email: 'test@example.com',
         password: 'wrongpassword',
@@ -66,7 +65,6 @@ void main() {
 
 
     test('signUpAuth - Error', () async {
-      // Perform sign-up
       final result = await emailandPasswordAuth.signUpAuth(
         email: 'user001@gmail.com',
         password: 'user001',

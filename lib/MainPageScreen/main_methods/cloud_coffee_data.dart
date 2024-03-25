@@ -219,7 +219,6 @@ Widget coffeeUpdateTextFormField({required String? labeltext,required String? Fu
           labelText: '$labeltext ($initialValue)',
           labelStyle: const TextStyle(
             fontSize: 15,
-            // fontWeight: FontWeight.bold,
             color: Color.fromARGB(255, 0, 0, 0),
           ),
           errorBorder: OutlineInputBorder(
@@ -298,7 +297,6 @@ class CoffeeList {
   String? notes;
   String? totalScore;
   String? finalScore;
-  // String? indexID;
 
   CoffeeList();
 
@@ -328,7 +326,6 @@ class CoffeeList {
     'notes': notes,
     'total_score': totalScore,
     'final_score': finalScore,
-    // 'index': indexID,
   };
 
   CoffeeList.fromSnapshot(snapshot) : 

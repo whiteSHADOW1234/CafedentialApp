@@ -11,7 +11,6 @@ void main() {
     expect(find.text('Email'), findsOneWidget);
     expect(find.text('Password'), findsOneWidget);
     expect(find.text('Login'), findsOneWidget);
-    // Add more expectations based on your UI
   });
 
   testWidgets('Register screen UI Test', (WidgetTester tester) async {
@@ -27,6 +26,5 @@ void main() {
     expect(find.text('Cafedential'), findsOneWidget);
     expect(find.text('Login'), findsOneWidget);
     expect(find.text('Register with Email'), findsOneWidget);
-    // Add more expectations based on your UI
   });
 }
