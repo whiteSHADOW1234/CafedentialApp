@@ -100,7 +100,7 @@ class _WelcomeState extends State<Welcome> {
                   child: const Text('Register with Email')
                 ),
                 const SizedBox(
-                  height: 30.0,
+                  height: 28.0,
                 ),
               ],
             ),

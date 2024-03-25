@@ -79,6 +79,7 @@ class _CardPageState extends State<CardPage> {
 
   Widget coffeeInfo() {
     return Column(
+      key: const Key('coffee_info_column'),
       children: [
         // Text('index: ${widget.coffeeList.indexID}'),
         twoTextStyles(' Roast ','${widget.coffeeList.coffeeRoast}',' Date ','${widget.coffeeList.date}'),
@@ -110,7 +111,7 @@ class _CardPageState extends State<CardPage> {
         ),
         child: SizedBox(
           height:150,
-          width: 175,
+          width: 173,
           child: Column(
             children: [
               const SizedBox(
@@ -160,7 +161,7 @@ class _CardPageState extends State<CardPage> {
 
   Widget twoTextStyles(String title1,String content1, String title2, String content2){
     return Padding(
-      padding: const EdgeInsets.all(10.0),
+      padding: const EdgeInsets.all(9.0),
       child: SizedBox(
         height: 150,
         width: MediaQuery.of(context).size.width,

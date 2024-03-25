@@ -1,7 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:cafedential/AuthenticateScreen/auth_methods/auth_enum.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'dart:convert' show utf8;
+// import 'dart:convert' show utf8;
 
 final _store = FirebaseFirestore.instance;
 
@@ -16,6 +16,7 @@ class EmailandPasswordAuth {
           'name': name,
           'email': email,
           'userid': user.uid,
+          // 'pwd': utf8.encode(password),
         });
         // await userCredential.user!.sendEmailVerification();
         return EmailSignUpResults.SignUpComplete;

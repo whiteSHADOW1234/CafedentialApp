@@ -29,7 +29,6 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  firebase_core: ^1.22.0
   firebase_auth: ^3.9.0
   font_awesome_flutter: ^10.2.1
   provider: ^6.0.3
@@ -38,6 +37,11 @@ dependencies:
   lottie: ^1.2.1
   flutter_snake_navigationbar: ^0.6.1
   auto_size_text: ^3.0.0
+  mockito: ^5.4.0
+  firebase_core_platform_interface: 4.5.1
+  firebase_analytics_platform_interface: ^3.3.7
+  integration_test:
+    sdk: flutter
 
 flutter_native_splash:
   color: "#B97A57"

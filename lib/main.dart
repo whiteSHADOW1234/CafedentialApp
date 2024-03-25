@@ -4,6 +4,7 @@ import 'package:cafedential/AuthenticateScreen/welcome_screen.dart';
 import 'package:cafedential/nav.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+// ignore: depend_on_referenced_packages
 import 'package:firebase_core/firebase_core.dart';
 import 'root.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -55,7 +56,7 @@ class Authenticate extends StatelessWidget {
   const Authenticate({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    final firebaseUser = context.watch<User>();
+    final firebaseUser = context.watch<User?>();
 
     // ignore: unnecessary_null_comparison
     if (firebaseUser != null) {
